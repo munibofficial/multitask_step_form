@@ -1,0 +1,536 @@
+@import './font.css';
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+}
+
+a {
+  font-weight: 500;
+  color: #646cff;
+  text-decoration: inherit;
+}
+a:hover {
+  color: #535bf2;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  place-items: center;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+}
+
+button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #1a1a1a;
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+button:hover {
+  border-color: #646cff;
+}
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #213547;
+    background-color: #ffffff;
+  }
+  a:hover {
+    color: #747bff;
+  }
+  button {
+    background-color: #f9f9f9;
+  }
+}
+/* @font-face {
+  font-family: 'Ubuntu';
+  font-style: normal;
+  font-weight: 400;
+  src: url('../assets/fonts/Ubuntu-Regular.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Ubuntu';
+  font-style: normal;
+  font-weight: 500;
+  src: url('../assets/fonts/Ubuntu-Medium.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Ubuntu';
+  font-style: normal;
+  font-weight: 700;
+  src: url('../assets/fonts/Ubuntu-Bold.ttf') format('truetype');
+}
+body {
+  font-family: 'Ubuntu', sans-serif;
+}
+h1, h2, h3 {
+  font-family: 'Ubuntu', sans-serif;
+} */
+.main-form {
+  display: flex;
+}
+
+.sidebar {
+  width: 20%;
+  height: 87%;
+  padding: 16px;
+  padding-top: 30px;
+  color: white;
+  border-radius: 10px;
+  position: fixed;
+  top:0;
+  left:0;
+  margin: 10px;
+}
+
+.sidebar ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.sidebar li {
+  margin-bottom: 20px;
+}
+
+.sidebar .active {
+  background-color: transparent; /* Remove background color */
+  color: white;
+}
+
+.sidebar .active .step-circle {
+  background-color: hsl(206, 94%, 87%); /* Set fill color for active circle */
+  color: #1a1a1a;
+}
+
+.sidebar .step-circle {
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: transparent;
+  border: solid 1px hsl(206, 94%, 87%);
+  text-align: center;
+  line-height: 30px;
+  margin-right: 10px;
+  vertical-align: middle; /* Add this line to vertically align the circle */
+}
+
+.sidebar span {
+  display: inline-block;
+  vertical-align: middle;
+  font-size: 15px;
+
+}
+
+.sidebar small {
+  display: block;
+  font-size: 10px;
+}
+
+.form-container {
+  background-color: transparent;
+  width: 70% ;
+  height: 95%;
+  margin: 4px;
+  border-radius: 10px;
+  position: fixed; /* Add this line to make the form container position fixed */
+  top: 49%; /* Adjust the top position as needed */
+  left: 66%; /* Adjust the left position as needed */
+  transform: translate(-50%, -50%); /* Center the form container horizontally and vertically */
+}
+
+.main-form-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80vh;
+  width: 130vh; /* Adjust the height as needed */
+  background-color: white;
+  border-radius: 10px;
+}
+.
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: hsl(217, 100%, 97%);
+}
+
+.main-form-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+/* Add the following CSS code to your main CSS file or add it inline within the component */
+
+.personal-info {
+  max-width: 510px;
+  /* margin: 0 auto; */
+  margin-bottom: auto;
+  /* padding-bottom: 50px; */
+  margin-top: -30px;
+
+  background-color: transparent;
+  border-radius: 8px;
+}
+
+.personal-info .heading {
+  text-align: left;
+  margin-top: 10%;
+}
+
+.personal-info h2 {
+  color: hsl(213, 96%, 18%);
+  font-size: 20px;
+  font-family: 'Ubuntu-Bold', sans-serif;
+}
+
+.personal-info p {
+  text-align: left;
+  margin-top: -15px;
+  margin-bottom: 30px;
+}
+
+.personal-info .form-group {
+  margin-bottom: 20px;
+}
+
+.personal-info label {
+  display: block;
+  font-size: 15px;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.personal-info input[type="text"] {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  margin-bottom: 10px;
+}
+
+.personal-info .error {
+  color: red;
+  font-size: 10px;
+  display: block;
+  position: absolute;
+  margin-top: -10%;
+   /* Add this line to position the error message */
+   /* Adjust the top position to place it above the input box */
+  right: 22%; /* Adjust the right position to align it on the right side */
+}
+.personal-info .error input {
+  border-color: red; /* Set border color to red */
+}
+
+.personal-info .error input:focus {
+  outline-color: red; /* Set outline color to red when input is focused */
+}
+
+.personal-info button[type="submit"] {
+  background-color: hsl(213, 96%, 18%);
+  color: #fff;
+  /* padding: 10px 20px; */
+  font-size: 16px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  position: absolute;
+  top: 80%;
+  left: 67%;
+  /* margin-bottom: 25px; */
+}
+.main-container{
+  width: 70%;
+}
+.container {
+  display: flex;
+}
+
+.column {
+  flex: 1;
+}
+.card-container {
+  display: flex;
+  justify-content: space-between;
+  background-color:transparent;
+  width: 80%;
+}
+
+.card {
+  flex: 0 0 30%; /* Adjust this value to control the width of each card */
+  border-radius: 10px;
+  background-color: transparent;
+  border: 1px solid #ccc; /* Set the border properties */
+  margin-bottom: 2px;
+  height: 160px;
+  padding: 10px;
+  margin-right: 10px;
+  font-family: 'Ubuntu', sans-serif;
+}
+
+
+.card h3{
+  margin-top: 50px;
+  margin-bottom: -20px;
+}
+
+.card:last-child {
+  margin-right: 0;  
+}
+.main-card-form{
+  background-color: transparent;
+  width: 95%;
+  height: 95%;
+  margin: 4px;
+
+}
+.switch-container1{
+  background-color: transparent;
+  display: flex;
+  justify-content: center; /* Add this line */
+  align-items: center;
+  width: 86%;
+  border-radius: 10px;
+  margin-bottom: 50px;
+  background-color: hsl(231, 100%, 99%);
+  margin-top: 20px;
+  height: 50px;
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 50px;
+  height: 24px;
+}
+
+.switch input[type="checkbox"] {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.switch label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: hsl(213, 96%, 18%);
+  border-radius: 34px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.switch label:before {
+  content: '';
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  top: 4px;
+  left: 4px;
+  background-color: #fff;
+  border-radius: 50%;
+  transition: transform 0.3s;
+}
+
+.switch input:checked + label {
+  background-color: hsl(213, 96%, 18%);
+}
+
+.switch input:checked + label:before {
+  transform: translateX(26px);
+}
+.card.active {
+  border-color: blue;
+  background-color:hsl(231, 100%, 99%) ;
+}
+.card:hover{
+  border-color: blue;
+
+}
+
+
+.next-step{
+  background-color:transparent;
+  /* padding: 10px 20px; */
+  font-size: 16px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  position: absolute;
+  top: 80%;
+  left: 67%;
+}
+.back-button:hover {
+  color: blue;
+  
+}
+
+.checkbox-with-text {
+  background-color: transparent;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 85%;
+  border-radius: 10px;
+  margin-top: 20px;
+  height: 80px;
+  border: 1px solid blue;
+}
+
+.checkbox-with-text input[type="checkbox"] {
+  margin-right: 30px;
+  position: absolute;
+  left: 10px;
+  margin-top: 10px;
+  width: 20px;
+  height: 20px;
+}
+
+.checkbox-with-text .text-content {
+  flex: 1;
+}
+
+.checkbox-with-text h3 {
+  margin: 0;
+  font-size: 18px;
+  margin-left: 30px;
+}
+
+.checkbox-with-text h4 {
+  margin: 0;
+  font-size: 18px;
+  margin-left: 450px;
+  margin-top: -55px;
+}
+
+.checkbox-with-text p {
+  margin: 0;
+  font-size: 14px;
+  color: #555555;
+  margin-left: 30px;
+  margin-bottom: 20px;
+}
+
+.checkbox-with-text input[type="checkbox"]:checked {
+  background-color: #f0f0f0;
+}
+.checkbox-with-text {
+  background-color: transparent;
+  display: flex;
+  align-items: center;
+  width: 85%;
+  border-radius: 10px;
+  margin-top: 20px;
+  height: 80px;
+  border: 1px solid blue;
+}
+
+.checkbox-with-text.checked {
+  background-color: #eaf5ff; /* Change this color to your desired background color */
+}
+
+/* Rest of your CSS styles for the CheckboxWithText component */
+.addonssummary{
+  background-color: #eaf5ff;
+  width: 85%;
+  padding-bottom: 20px;
+  border-radius: 10px;
+}
+.addonscard{
+  display: flex;
+
+}
+.addonscard h4{
+  position: absolute;
+  right: 20%;
+  bottom: 65%;
+}
+
+.addonscard h3{
+  padding-left: 5%;
+}
+.summarytotal{
+  display: flex;
+  margin-top: 10px;
+  padding-bottom: 20px;
+}
+.summarytotal h2{
+  position: absolute;
+  right: 20%;
+}
+.summarytotal p{
+  padding-left: 5%;
+}
+.change-button {
+  background-color: transparent;
+  position: absolute;
+  bottom: 65%;
+  left: 4%;
+  border: none;
+  color: blue;
+  text-decoration: underline;
+  cursor: pointer;
+  display: inline;
+  padding: 0;
+  margin: 0;
+  font: inherit;
+}
+
+.change-button:hover {
+  color: red; /* Change color on hover, you can customize it as per your preference */
+}
+.thank-you{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 60vh;
+  margin-left: -100px;
+
+}
+
+
+.thank-you h2 {
+margin-bottom: -10px;
+}
+
